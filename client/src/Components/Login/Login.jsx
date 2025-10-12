@@ -19,6 +19,7 @@ const Login = () => {
     e.preventDefault()
     try {
       const response = await axios.post('http://localhost:3000/auth/login', values)
+      localStorage.setItem("token", response.data.token);
 
       if (response.status === 200 || response.status === 201) {
         const token = response.data.token
@@ -32,6 +33,7 @@ const Login = () => {
         Swal.fire({
           icon: 'success',
           title: 'Login Successful',
+          confirmButtonColor: "#FF6767",
           text: 'Welcome back!',
         }).then(() => {
           navigate('/')
@@ -41,13 +43,14 @@ const Login = () => {
       Swal.fire({
         icon: 'error',
         title: 'Login Failed',
+        confirmButtonColor: "#FF6767",
         text: err.response?.data?.message || 'Invalid username or password',
       })
     }
   }
 
   return (
-    <div className="m-0 p-0 h-screen w-screen flex justify-center items-center h-screen bg-cover bg-center bg-[url('/Register/Background.png')]">
+    <div className="m-0 p-0 h-screen w-screen flex justify-center items-center h-screen bg-cover bg-center bg-[url('/Register/Background.png')]" style={{ fontFamily: "Montserrat, sans-serif" }}>
       <div className='w-1/2 px-12 py-5 h-screen'>
         <h2 className='font-montserrat text-4xl font-bold mb-8 mt-25'>Sign In</h2>
         <form className="h-[40%]" onSubmit={handleSubmit}>

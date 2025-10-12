@@ -40,6 +40,7 @@ const Register = () => {
       Swal.fire({
         icon: 'error',
         title: 'Mismatch Passwords',
+        confirmButtonColor: "#FF6767",
         text: 'Passwords do not match!',
       })
       return
@@ -50,6 +51,7 @@ const Register = () => {
       Swal.fire({
         icon: 'error',
         title: 'Invalid Email',
+        confirmButtonColor: "#FF6767",
         text: 'Please enter a valid email address',
       })
       return
@@ -60,6 +62,7 @@ const Register = () => {
         return Swal.fire({
           icon: 'warning',
           title: 'Terms Not Accepted',
+          confirmButtonColor: "#FF6767",
           text: 'You must agree to the terms before creating an account.',
         })
       }
@@ -72,6 +75,7 @@ const Register = () => {
         Swal.fire({
           icon: 'success',
           title: 'Account Created',
+          confirmButtonColor: "#FF6767",
           text: 'Successfully created an account!',
         }).then(() => {
           navigate('/login') // redirect after OK
@@ -81,13 +85,14 @@ const Register = () => {
       Swal.fire({
         icon: 'error',
         title: 'Registration Failed',
+        confirmButtonColor: "#FF6767",
         text: err.response?.data?.message || 'Something went wrong, account creation failed',
       })
     }
   }
 
   return (
-    <div className="m-0 p-0 h-screen w-screen flex justify-center items-center h-screen bg-cover bg-center bg-[url('/Register/Background.png')]">
+    <div className="m-0 p-0 h-screen w-screen flex justify-center items-center h-screen bg-cover bg-center bg-[url('/Register/Background.png')]" style={{ fontFamily: "Montserrat, sans-serif" }}>
       <div className = "w-1/2 relative h-screen flex items-end">
         <img className = "mr-[50%] w-[70%] h-[90%] object-contain" src={"/Register/Image.png"} alt="Image" />
       </div>

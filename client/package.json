@@ -15,6 +15,7 @@
     "axios": "^1.12.2",
     "react": "^19.1.1",
     "react-calendar": "^6.0.0",
+    "react-circular-progressbar": "^2.2.0",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1",
     "sweetalert2": "^11.23.0",
